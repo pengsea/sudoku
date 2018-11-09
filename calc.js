@@ -134,7 +134,7 @@ function replace(obj, arr) {
     return temp;
 }
 
-calc();
+// calc();
 // let n=new Date().getTime();
 // mix([ 1,2,3,4,5,6,7,8,9]);
 // console.log(new Date().getTime()-n)

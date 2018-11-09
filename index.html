@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>暴力破解数独</title>
+    <style>
+        tr{
+            border-right: #443 2px solid;
+            border-top: #999 1px solid;
+        }
+        td {
+            width: 30px;
+            height: 30px;
+        }
+
+        input {
+            width: 30px;
+            height: 30px;
+            font-size: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table id="question">
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+    <tr>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+        <td><input maxlength="1"/></td>
+    </tr>
+</table>
+<button type="button">答案</button>
+<table id="result">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+<script src="calc.js"></script>
+</html>
